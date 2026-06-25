@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Aileen Tercinta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --warna-utama: #fff0f3;
+            --merah-muda: #ffb4c2;
+            --merah-tua: #ff4d6d;
+            --emas: #d4af37;
+        }
+        * {
+            box-shadow: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--warna-utama);
+            color: #333;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.aktif {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: var(--merah-tua);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .foto-frame {
+            width: 100%;
+            height: 280px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 4px solid var(--merah-muda);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .foto-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tombol {
+            background-color: var(--merah-tua);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+        }
+        .tombol:hover {
+            transform: scale(1.05);
+            background-color: #e03a5c;
+        }
+        .surat-box {
+            background: var(--warna-utama);
+            border: 2px dashed var(--merah-tua);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+            text-align: left;
+            font-style: italic;
+        }
+        #floating-hearts {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .heart {
+            position: absolute;
+            color: var(--merah-tua);
+            animation: fly 3s linear infinite;
+            opacity: 0;
+        }
+        @keyframes fly {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Musik Latar Belakang -->
+    <audio id="musikLatar" loop>
+        <source src="ssstik.io_178175429261.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="floating-hearts"></div>
+
+    <div class="container">
+        <!-- Slide 1: Pembuka -->
+        <div class="slide aktif" id="slide1">
+            <div class="foto-frame">
+                <img src="IMG-20260525-WA00029.jpg" alt="Foto Kenangan">
+            </div>
+            <h1>Halo Sayangku, Aileen ❤️</h1>
+            <p>Aku punya sesuatu yang spesial buat kamu. Klik tombol di bawah musiknya langsung berputar ya!</p>
+            <button class="tombol" onclick="mulaiWebsite()">Buka Kejutan ✨</button>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide2">
+            <div class="foto-frame">
+                <img src="IMG-20260606-WA00052.jpg" alt="Foto Kenangan">
+            </div>
+            <h1>Setiap Detik Bersamamu</h1>
+            <p>Adalah momen terbaik dalam hidupku. Terima kasih ya sudah hadir dan selalu ada untukku.</p>
+            <button class="tombol" onclick="berikutnya()">Lanjut Kekasihku 🥰</button>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" id="slide3">
+            <div class="foto-frame">
+                <img src="IMG-20260619-WA00007.jpg" alt="Foto Kenangan">
+            </div>
+            <h1>Senyumanmu Bahagiaku</h1>
+            <p>Jangan pernah bosan denganku ya. Aku akan selalu berusaha menjadi yang terbaik untuk hubungan kita.</p>
+            <button class="tombol" onclick="berikutnya()">Mau Lihat Lagi? ❤️</button>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" id="slide4">
+            <div class="foto-frame">
+                <img src="IMG-20260622-WA00043.jpg" alt="Foto Kenangan">
+            </div>
+            <h1>Kamu Istimewa</h1>
+            <p>Bagiku, kamu bukan sekadar pasangan, tapi juga tempatku pulang dan berbagi segala cerita dunia.</p>
+            <button class="tombol" onclick="berikutnya()">Selanjutnya Sayang 🌹</button>
+        </div>
+
+        <!-- Slide 5: Penutup & Surat Rahasia -->
+        <div class="slide" id="slide5">
+            <div class="foto-frame">
+                <img src="IMG-20260622-WA00084.jpg" alt="Foto Kenangan">
+            </div>
+            <h1>I Love You More, Aileen</h1>
+            <p>Ini ada surat kecil dariku untukmu yang paling cantik sedunia.</p>
+            <button class="tombol" onclick="bukaSurat()">Buka Surat Rahasia 💌</button>
+            <div class="surat-box" id="kotakSurat">
+                "Aku mencintaimu bukan hanya karena siapa dirimu, tapi karena aku menjadi apa saat bersamamu. Tetap jadi milikku selamanya ya, sayang..."
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideSekarang = 1;
+        const totalSlide = 5;
+        const musik = document.getElementById('musikLatar');
+
+        function mulaiWebsite() {
+            musik.play().catch(e => console.log("Musik menunggu interaksi pengguna."));
+            buatHati();
+            berikutnya();
+        }
+
+        function berikutnya() {
+            if(slideSekarang <= totalSlide) {
+                document.getElementById(`slide${slideSekarang}`).classList.remove('aktif');
+                slideSekarang++;
+                if(slideSekarang > totalSlide) {
+                    slideSekarang = totalSlide;
+                }
+                document.getElementById(`slide${slideSekarang}`).classList.add('aktif');
+            }
+        }
+
+        function bukaSurat() {
+            const surat = document.getElementById('kotakSurat');
+            surat.style.display = (surat.style.display === 'block') ? 'none' : 'block';
+            setInterval(buatHati, 300);
+        }
+
+        function buatHati() {
+            const containerHati = document.getElementById('floating-hearts');
+            const b = document.createElement('i');
+            b.classList.add('fas', 'fa-heart', 'heart');
+            b.style.left = Math.random() * 100 + 'vw';
+            b.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            b.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            containerHati.appendChild(b);
+            setTimeout(() => { b.remove(); }, 4000);
+        }
+    </script>
+</body>
+  </html>
+                                                                            
